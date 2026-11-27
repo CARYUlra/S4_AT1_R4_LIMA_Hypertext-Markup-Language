@@ -6,89 +6,162 @@
   <title>Monte seu PC | PixelGear</title>
   <link rel="stylesheet" href="script.css">
   <script src="theme.js" defer></script>
+  <script src="cart.js" defer></script>
 </head>
-<body class="inner-page">
+<body class="inner-page configurator-page">
   <header class="inner-header">
     <div class="container">
       <a class="brand" href="index.html"><span class="brand-mark">P</span><span>Pixel<span>Gear</span></span></a>
-      <a href="index.html" style="font-size:12px;color:#777b84">← Voltar para a loja</a>
+      <div class="builder-header-actions">
+        <a href="index.html">← Voltar para a loja</a>
+        <button class="builder-cart-button" type="button" id="builder-cart-button">Carrinho <b id="builder-cart-count">0</b></button>
+      </div>
     </div>
   </header>
 
-  <main class="configurator">
-    <h1 class="page-title">Monte seu computador</h1>
-    <form action="index.html">
-      <fieldset>
-        <legend>Componentes essenciais</legend>
-        <label for="processador">Processador</label>
-        <select id="processador" name="processador" required>
-          <option value="">Selecione um processador</option>
-          <option>Intel Core i5-12600K</option>
-          <option>AMD Ryzen 5 7600X</option>
-          <option>AMD Ryzen 7 7800X</option>
-        </select>
-        <label for="placa_mae">Placa-mãe</label>
-        <select id="placa_mae" name="placa_mae" required>
-          <option value="">Selecione uma placa-mãe</option><option>Intel B660</option><option>AMD X570</option><option>AMD X670</option>
-        </select>
-        <label for="armazenamento">Armazenamento</label>
-        <select id="armazenamento" name="armazenamento" required>
-          <option value="">Selecione o armazenamento</option><option>SSD 480GB</option><option>SSD NVMe 1TB</option><option>SSD NVMe 2TB</option>
-        </select>
-        <label for="ram">Memória RAM</label>
-        <select id="ram" name="ram" required>
-          <option value="">Selecione a memória</option><option>8GB DDR4</option><option>16GB DDR5</option><option>32GB DDR5</option>
-        </select>
-        <label for="placa_video">Placa de vídeo</label>
-        <select id="placa_video" name="placa_video" required>
-          <option value="">Selecione uma placa de vídeo</option><option>NVIDIA RTX 3060</option><option>NVIDIA RTX 4070</option><option>NVIDIA RTX 4090</option>
-        </select>
-        <label for="fonte">Fonte de alimentação</label>
-        <select id="fonte" name="fonte" required>
-          <option value="">Selecione uma fonte</option><option>500W</option><option>650W</option><option>850W</option>
-        </select>
+  <main class="pc-builder">
+    <div class="builder-heading">
+      <div><span class="eyebrow">CONFIGURADOR PROFISSIONAL</span><h1>Monte seu computador</h1><p>Escolha um componente em cada categoria. Confira a compatibilidade e revise tudo antes de finalizar.</p></div>
+      <div class="builder-progress"><span id="builder-progress-label">0 de 8 selecionados</span><div><i id="builder-progress-bar"></i></div></div>
+    </div>
 
-        <label>Refrigeração</label>
-        <div class="cooler-options">
-          <label><input type="radio" name="tipo_cooler" value="air" onclick="alternarPerguntas()"> Air cooler</label>
-          <label><input type="radio" name="tipo_cooler" value="water" onclick="alternarPerguntas()"> Water cooler</label>
-        </div>
-        <div id="bloco-air" class="pergunta-dinamica">
-          <label for="select-air">Modelo do Air Cooler</label>
-          <select id="select-air"><option>Cooler Master Hyper H412R</option><option>DeepCool AK400</option><option>Noctua NH-D15</option></select>
-        </div>
-        <div id="bloco-water" class="pergunta-dinamica">
-          <label for="select-water">Modelo do Water Cooler</label>
-          <select id="select-water"><option>Corsair iCUE H100i</option><option>NZXT Kraken 240</option><option>Rise Mode Aura Frost</option></select>
-        </div>
-      </fieldset>
+    <section class="builder-layout">
+      <div class="builder-main">
+        <div class="builder-tabs" id="builder-tabs" aria-label="Categorias"></div>
+        <div class="builder-products" id="builder-products"></div>
+      </div>
 
-      <fieldset>
-        <legend>Montagem e adicionais</legend>
-        <label class="checkbox-line"><input type="radio" name="montagem" value="sim" checked> O PC deve ser entregue montado e testado</label>
-        <label class="checkbox-line"><input type="radio" name="montagem" value="nao"> Desejo receber os componentes separados</label>
-        <label class="checkbox-line"><input type="checkbox" name="caixa" checked> Entregar na embalagem original</label>
-        <label class="checkbox-line"><input type="checkbox" name="garantia"> Adicionar garantia estendida de 12 meses</label>
-      </fieldset>
-
-      <fieldset>
-        <legend>Entrega</legend>
-        <label for="entrega">Endereço completo</label>
-        <textarea id="entrega" name="entrega" required placeholder="Rua, número, bairro, cidade e CEP"></textarea>
-        <label for="foto_referencia">Foto opcional da residência</label>
-        <input id="foto_referencia" type="file" accept="image/*" style="height:auto;padding:10px 0;border:0">
-      </fieldset>
-
-      <div class="configurator-actions"><button class="button button-primary" type="submit">Salvar configuração</button></div>
-    </form>
+      <aside class="build-summary">
+        <div class="summary-heading"><div><small>SEU COMPUTADOR</small><h2>Resumo do pedido</h2></div><span id="summary-count">0 itens</span></div>
+        <div id="summary-list" class="summary-list"></div>
+        <div class="summary-total"><span>Valor total</span><strong id="summary-total">R$ 0,00</strong></div>
+        <button class="summary-checkout" type="button" id="summary-checkout">Adicionar configuração ao carrinho</button>
+        <button class="summary-clear" type="button" id="summary-clear">Limpar configuração</button>
+      </aside>
+    </section>
   </main>
 
   <script>
-    function alternarPerguntas() {
-      const opcao = document.querySelector('input[name="tipo_cooler"]:checked').value;
-      document.getElementById('bloco-air').style.display = opcao === 'air' ? 'block' : 'none';
-      document.getElementById('bloco-water').style.display = opcao === 'water' ? 'block' : 'none';
+    const catalog = {
+      "Processador": [
+        {name:"AMD Ryzen 5 5600", price:649, image:"https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=500&q=85", detail:"6 núcleos • 12 threads"},
+        {name:"AMD Ryzen 7 7800X3D", price:2549, image:"https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=500&q=85", detail:"8 núcleos • AM5 • 120W"},
+        {name:"Intel Core i7-14700K", price:2899, image:"https://images.unsplash.com/photo-1555617981-dac3880eac6e?auto=format&fit=crop&w=500&q=85", detail:"20 núcleos • LGA1700"}
+      ],
+      "Placa-mãe": [
+        {name:"Gigabyte B650M", price:1299, image:"https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=500&q=85", detail:"AM5 • DDR5 • Wi-Fi"},
+        {name:"ASUS TUF B760", price:1499, image:"https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=500&q=85", detail:"LGA1700 • DDR5"},
+        {name:"MSI MAG X670E", price:3299, image:"https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=500&q=85", detail:"AM5 • PCIe 5.0"}
+      ],
+      "Memória RAM": [
+        {name:"Corsair 16GB DDR5", price:449, image:"https://images.unsplash.com/photo-1562976540-1502c2145186?auto=format&fit=crop&w=500&q=85", detail:"2×8GB • 5200MHz"},
+        {name:"Kingston Fury 32GB", price:899, image:"https://images.unsplash.com/photo-1562976540-1502c2145186?auto=format&fit=crop&w=500&q=85", detail:"2×16GB • 6000MHz"},
+        {name:"G.Skill 64GB", price:1699, image:"https://images.unsplash.com/photo-1562976540-1502c2145186?auto=format&fit=crop&w=500&q=85", detail:"2×32GB • 6400MHz"}
+      ],
+      "Placa de vídeo": [
+        {name:"GeForce RTX 4060", price:1899, image:"https://images.unsplash.com/photo-1598550476439-6847785fcea6?auto=format&fit=crop&w=500&q=85", detail:"8GB GDDR6 • 115W"},
+        {name:"GeForce RTX 4070 Ti", price:5499, image:"https://images.unsplash.com/photo-1598550476439-6847785fcea6?auto=format&fit=crop&w=500&q=85", detail:"12GB GDDR6X • Ray Tracing"},
+        {name:"Radeon RX 7900 XT", price:4999, image:"https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=500&q=85", detail:"20GB GDDR6 • 4K"}
+      ],
+      "Armazenamento": [
+        {name:"SSD NVMe 1TB", price:499, image:"https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&w=500&q=85", detail:"PCIe 4.0 • 7.300 MB/s"},
+        {name:"SSD NVMe 2TB", price:899, image:"https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&w=500&q=85", detail:"PCIe 4.0 • 7.000 MB/s"},
+        {name:"SSD NVMe 4TB", price:1699, image:"https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&w=500&q=85", detail:"PCIe 5.0 • Alta durabilidade"}
+      ],
+      "Fonte": [
+        {name:"Corsair CX650", price:449, image:"https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&w=500&q=85", detail:"650W • 80 Plus Bronze"},
+        {name:"Seasonic 750W", price:699, image:"https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&w=500&q=85", detail:"750W • 80 Plus Gold"},
+        {name:"Corsair 850W", price:999, image:"https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&w=500&q=85", detail:"850W • Modular • 80 Plus Gold"}
+      ],
+      "Gabinete": [
+        {name:"DeepCool CG560", price:449, image:"https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=500&q=85", detail:"Mid Tower • Vidro temperado"},
+        {name:"NZXT H6 Flow", price:899, image:"https://images.unsplash.com/photo-1593640495253-23196b27a87f?auto=format&fit=crop&w=500&q=85", detail:"Dual Chamber • Vidro panorâmico"},
+        {name:"Corsair 5000D", price:1199, image:"https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&w=500&q=85", detail:"Airflow • ATX • Vidro"}
+      ],
+      "Refrigeração": [
+        {name:"Cooler Air RGB", price:249, image:"https://images.unsplash.com/photo-1520869562399-e772f042f422?auto=format&fit=crop&w=500&q=85", detail:"120mm • Air Cooler"},
+        {name:"Water Cooler 240mm", price:699, image:"https://images.unsplash.com/photo-1520869562399-e772f042f422?auto=format&fit=crop&w=500&q=85", detail:"240mm • Duplo fan • RGB"},
+        {name:"Water Cooler 360mm", price:1099, image:"https://images.unsplash.com/photo-1520869562399-e772f042f422?auto=format&fit=crop&w=500&q=85", detail:"360mm • Alto desempenho"}
+      ]
+    };
+
+    const categories = Object.keys(catalog);
+    const choices = JSON.parse(localStorage.getItem('pixelgear-build') || '{}');
+    let activeCategory = categories[0];
+    const money = value => value.toLocaleString('pt-BR', {style:'currency', currency:'BRL'});
+
+    function renderTabs() {
+      document.getElementById('builder-tabs').innerHTML = categories.map(category => {
+        const complete = choices[category];
+        return `<button type="button" class="builder-tab ${category === activeCategory ? 'active' : ''} ${complete ? 'selected' : ''}" data-category="${category}"><span>${category}</span><b>${complete ? '✓' : 'Selecionar'}</b></button>`;
+      }).join('');
+      document.querySelectorAll('.builder-tab').forEach(tab => tab.addEventListener('click', () => { activeCategory = tab.dataset.category; renderTabs(); renderProducts(); }));
     }
+
+    function renderProducts() {
+      document.getElementById('builder-products').innerHTML = catalog[activeCategory].map((item, index) => {
+        const selected = choices[activeCategory]?.name === item.name;
+        return `<article class="component-card ${selected ? 'selected' : ''}" data-index="${index}">
+          <div class="component-image"><img src="${item.image}" alt="${item.name}"></div>
+          <div class="component-info"><small>${activeCategory}</small><h3>${item.name}</h3><p>${item.detail}</p><strong>${money(item.price)}</strong><button type="button">${selected ? 'Selecionado ✓' : 'Escolher componente'}</button></div>
+        </article>`;
+      }).join('');
+      document.querySelectorAll('.component-card').forEach(card => card.querySelector('button').addEventListener('click', () => {
+        const item = catalog[activeCategory][Number(card.dataset.index)];
+        choices[activeCategory] = item;
+        localStorage.setItem('pixelgear-build', JSON.stringify(choices));
+        renderTabs(); renderProducts(); renderSummary();
+      }));
+    }
+
+    function renderSummary() {
+      const selectedCategories = Object.keys(choices).filter(category => choices[category]);
+      const total = selectedCategories.reduce((sum, category) => sum + choices[category].price, 0);
+      document.getElementById('summary-list').innerHTML = categories.map(category => {
+        const item = choices[category];
+        return `<article class="summary-item ${item ? '' : 'missing'}">
+          ${item ? `<img src="${item.image}" alt="${item.name}">` : '<div class="summary-placeholder">+</div>'}
+          <div><small>${category}</small><strong>${item ? item.name : 'Não selecionado'}</strong></div>
+          ${item ? `<button type="button" aria-label="Remover ${item.name}" data-remove="${category}">×</button>` : ''}
+        </article>`;
+      }).join('');
+      document.querySelectorAll('[data-remove]').forEach(button => button.addEventListener('click', () => {
+        delete choices[button.dataset.remove];
+        localStorage.setItem('pixelgear-build', JSON.stringify(choices));
+        renderTabs(); renderProducts(); renderSummary();
+      }));
+      document.getElementById('summary-count').textContent = `${selectedCategories.length} de ${categories.length} itens`;
+      document.getElementById('summary-total').textContent = money(total);
+      document.getElementById('builder-progress-label').textContent = `${selectedCategories.length} de ${categories.length} selecionados`;
+      document.getElementById('builder-progress-bar').style.width = `${selectedCategories.length / categories.length * 100}%`;
+      document.getElementById('summary-checkout').disabled = selectedCategories.length !== categories.length;
+      document.getElementById('summary-checkout').textContent = selectedCategories.length === categories.length ? 'Adicionar configuração ao carrinho' : `Faltam ${categories.length - selectedCategories.length} itens`;
+    }
+
+    document.getElementById('summary-clear').addEventListener('click', () => {
+      Object.keys(choices).forEach(key => delete choices[key]);
+      localStorage.removeItem('pixelgear-build');
+      renderTabs(); renderProducts(); renderSummary();
+    });
+
+    document.getElementById('summary-checkout').addEventListener('click', () => {
+      if (Object.keys(choices).length !== categories.length) return;
+      const cart = JSON.parse(localStorage.getItem('pixelgear-cart') || '[]');
+      const total = categories.reduce((sum, category) => sum + choices[category].price, 0);
+      cart.push({name:'Computador Gamer Personalizado', price:total, image:'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=700&q=85', qty:1});
+      localStorage.setItem('pixelgear-cart', JSON.stringify(cart));
+      document.getElementById('builder-cart-count').textContent = cart.reduce((sum, item) => sum + item.qty, 0);
+      document.getElementById('summary-checkout').textContent = 'Configuração adicionada ✓';
+      window.dispatchEvent(new CustomEvent('pixelgear-cart-updated'));
+    });
+
+    const initialCart = JSON.parse(localStorage.getItem('pixelgear-cart') || '[]');
+    document.getElementById('builder-cart-count').textContent = initialCart.reduce((sum, item) => sum + item.qty, 0);
+    document.getElementById('builder-cart-button').addEventListener('click', () => {
+      // O carrinho lateral é controlado pelo arquivo cart.js
+    });
+
+    renderTabs(); renderProducts(); renderSummary();
   </script>
 </body>
 </html>

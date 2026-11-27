@@ -7,6 +7,7 @@
   <title>PixelGear | Hardware Gamer</title>
   <link rel="stylesheet" href="script.css">
   <script src="theme.js" defer></script>
+  <script src="cart.js" defer></script>
 </head>
 <body>
   <div class="topbar">
@@ -37,7 +38,7 @@
           <span><small>Olá, faça seu</small><strong>Login</strong></span>
         </a>
         <button class="cart-button" type="button" aria-label="Carrinho">
-          <span>♡</span><b id="cart-count">0</b>
+          <span>🛒︎</span><b id="cart-count">0</b>
         </button>
       </div>
     </div>
@@ -73,7 +74,7 @@
     </section>
 
     <section class="trust container" aria-label="Benefícios">
-      <article><span>⚡</span><div><strong>Entrega rápida</strong><small>Rastreie seu pedido</small></div></article>
+      <article><span>ϟ</span><div><strong>Entrega rápida</strong><small>Rastreie seu pedido</small></div></article>
       <article><span>♢</span><div><strong>Pagamento seguro</strong><small>Pagamento protegido</small></div></article>
       <article><span>◎</span><div><strong>Até 10x sem juros</strong><small>Em compras selecionadas</small></div></article>
       <article><span>▣</span><div><strong>Suporte especializado</strong><small>Assistência técnica</small></div></article>
@@ -277,20 +278,5 @@
     </div>
     <div class="container footer-bottom"><span>© 2026 PixelGear</span><span>Loja gamer auruda</span></div>
   </footer>
-
-  <script>
-    const cartCount = document.getElementById('cart-count');
-    let count = 0;
-    document.querySelectorAll('.buy-button').forEach(button => {
-      button.addEventListener('click', () => {
-        count++;
-        cartCount.textContent = count;
-        const original = button.textContent;
-        button.textContent = 'Adicionado ✓';
-        button.classList.add('added');
-        setTimeout(() => { button.textContent = original; button.classList.remove('added'); }, 1500);
-      });
-    });
-  </script>
 </body>
 </html>
