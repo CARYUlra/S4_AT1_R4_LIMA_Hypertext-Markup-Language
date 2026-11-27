@@ -1,139 +1,296 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>S4_AT2_R4_LIMA_Hypertext_Markup_Language</title>
-<link rel="stylesheet" href="./script.css">        <!-- Estilo para a página    -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PixelGear — hardware, periféricos e computadores gamers.">
+  <title>PixelGear | Hardware Gamer</title>
+  <link rel="stylesheet" href="script.css">
+  <script src="theme.js" defer></script>
 </head>
-
 <body>
-<header style="text-align: center; font-style: italic; font-size: 3em;">PixelGear eSportss</header>    <!-- Estilo para o cabeçalho -->
-<hr>
-<a href="entrar.html" >
-    <button type="button" style="right: 0; position: absolute;"><h3 style="color: rgb(0, 0, 0)">  Sair</h3></button>
-</a>
-<section>                                                               <!-- separando todos em seção-->
-<h2 class="subtitulo">PC montado</h2>         <!-- definindo uma class para estilizar o subtitulo no css-->
-    <div class="imagem">  <!-- definindo uma class para estilizar a imagem no css-->
-    <img src="https://www.positivoempresas.com.br/wp-content/uploads/2025/06/thumb_d3400.png" alt="PC montado" width="300" height="300" style="border: 4px solid rgb(155,155,255);">
- <div class="texto">     <!-- definindo uma class para estilizar a descrição     no css-->
-<h3>Descrição do PC montado</h3>
-<a href="tabelaPC.html">
-    <h3 style="color: aliceblue;">Aizen 5500, kingKrinson 8gb ram, ...</h3>
-</a>
-<h3>Preço: R$ 2.500,00</h3>
-<ul>
-    <li><i>Rapido</i></li>
-    <li><i>Barrato</i></li>
-    <li><i>Carcaça ATUAL</i></li>
-</ul>
-</div>
-</div>
-</section>
-<hr>
-<section>
-<h2 class="subtitulo">Monitor</h2>
-<div class="imagem">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCwQNc5BZHxyCtBy5OhDQ4YlcouC8vRQoNx0G-ToNdyA&s=10" alt="Monitor" width="300" height="300" style="border: 4px solid rgb(155,155,255);">
-<div class = "texto">
-<h3>Descrição do monitor</h3>
-<h3>1Hz , 1x1.61803398875 , rgb</h3>
-<h3>Preço: R$ 10,00</h3>
-<ul>
-    <li><i>Pequeno</i></li>
-    <li><i>Alta desresolução</i></li>
-    <li><i>TEM CORES</i></li>
-</ul>
-</div>
-</div>
-</section>
-<hr>
-<section>
-<h2 class="subtitulo">Teclado</h2>
-<div class="imagem">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEAWRRZ3KoLt2cuhduq_2MRpmXqSm3Q98XEjg8mDloXA&s=10" alt="Teclado" width="300" height="300" style="border: 4px solid rgb(155,155,255);">
-    <div class="texto">
-        <h3>Descrição do teclado</h3>
-        <h3>Máquina de datilografia, novo modelo "QWER" </h3>
-        <h3>Preço: R$ 149,99</h3>
-        <ul>
-    <li><i>Ferro masciço</i></li>
-    <li><i>tinta inclusa</i></li>
-    <li><i>Com o "Ç"</i></li>
-</ul>
+  <div class="topbar">
+    <div class="container topbar-content">
+      <span>Frete grátis acima de R$ 499</span>
+      <div class="topbar-links">
+        <a href="#atendimento">Central de ajuda</a>
+        <a href="entrar.html">Minha conta</a>
+      </div>
     </div>
-</div>
-</section>
-<hr>
-<section>
-<h2 class="subtitulo">Monte seu computador</h2>
-<div class="imagem">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8cVujexGN4lN--SDIuBJhS2sJVUSM-97lsZq3xOoQ3w&s=10" alt="Teclado" width="300" height="300" style="border: 4px solid rgb(155,155,255);">
-    <div class="texto">
-        <h1>Suas especificações</h1>
-        <h1>Sua cor</h1>
-        <h1>Seu jeito</h1>
-        <a href="montarPC.html">
-    <h1 style="color: aliceblue;">Monte seu computador aqui</h1>
-</a>
+  </div>
 
-</ul>
+  <header class="main-header">
+    <div class="container header-content">
+      <a class="brand" href="index.html" aria-label="Página inicial">
+        <span class="brand-mark">P</span>
+        <span>Pixel<span>Gear</span></span>
+      </a>
+
+      <form class="search" role="search">
+        <input type="search" placeholder="O que você procura?" aria-label="Buscar produtos">
+        <button type="submit" aria-label="Buscar">⌕</button>
+      </form>
+
+      <div class="header-actions">
+        <a href="entrar.html" class="account-link">
+          <span class="action-icon">♙</span>
+          <span><small>Olá, faça seu</small><strong>Login</strong></span>
+        </a>
+        <button class="cart-button" type="button" aria-label="Carrinho">
+          <span>♡</span><b id="cart-count">0</b>
+        </button>
+      </div>
     </div>
-</div>
-</section>
-<hr>
-<div>
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPsvOKcr2T9-IKsVU949KBL8ncKU8EFJy36sZjPiAcWQ&s=10" alt="Pichau" width="25" height="25">
-<a href="https://www.pichau.com.br/" target="_blank">
-    <strong>Nosso Whatzap</strong>
-</a>
-</div>
-<div>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJSN56hdPbvHRG1HfK3w_Ke-0ml1rlfQOXAJmmQsMj_A&s=10" alt="terabyteshop" width="25" height="25">
-<a href="https://www.terabyteshop.com.br/" target="_blank">
-    <strong>Nosso Instagram</strong>
-</a>
-</div><div>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvJvDEznYVW6aY3lclCtJnKD3AE7DiZutnakVmPPyeow&s=10" alt="kabum" width="25" height="25">
-<a href="https://www.kabum.com.br/?&msclkid=a05aec6e82031fe00fec86b675708860&utm_source=bing&utm_medium=cpc&utm_campaign=_s_inst&utm_term=kabum&utm_content=_kabum%20exata&gclid=CJDrrbDSy5cDFcHkcwQdUicxhQ&gclsrc=ds&gad_source=7&gad_campaignid=607516134" target="_blank">
-    <strong>Nosso facebok</strong>
-</a>
-</div>
-<hr>
- <table border="1">
-        <thead style="color: aliceblue;">
-            <tr>
-                <th>UMA TABELA PARA OCUPAR ESPAÇO</th>
-                <th>UMA TABELA PARA OCUPAR ESPAÇO</th>
-                <th>UMA TABELA PARA OCUPAR ESPAÇO</th>
-                <th>UMA TABELA PARA OCUPAR ESPAÇO</th>
-                <th>UMA TABELA PARA OCUPAR ESPAÇO</th>
-                <th>UMA TABELA PARA OCUPAR ESPAÇO</th>
-                <th>UMA TABELA PARA OCUPAR ESPAÇO</th>
-                <th>UMA TABELA PARA OCUPAR ESPAÇO</th>
-                <th>UMA TABELA PARA OCUPAR ESPAÇO</th>
-            </tr>                 
-                <tr>    
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-                    <td>7</td>
-                    <td>8</td>
-                    <td>9</td>
-                </tr>
-            </tbody>
-        </thead>
 
-        </tr>
-<footer>            <!-- o roda pé-->
-<h3 style="text-align: center;">PixelGear eSportss</h3>
-</footer>    
+    <nav class="category-nav">
+      <div class="container category-content">
+        <a class="departments" href="#categorias"><span>☰</span> Todos os departamentos</a>
+        <a href="#destaques">Ofertas</a>
+        <a href="#destaques">PC Gamer</a>
+        <a href="#destaques">Hardware</a>
+        <a href="#destaques">Periféricos</a>
+        <a href="montarPC.html">Monte seu PC</a>
+      </div>
+    </nav>
+  </header>
 
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">LANÇAMENTO EXCLUSIVO</span>
+          <h1>Performance para<br><em>dominar o jogo.</em></h1>
+          <p>PCs Gamer montados com componentes selecionados, suporte especializado e até 10x sem juros.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#destaques">Ver ofertas</a>
+            <a class="button button-outline" href="montarPC.html">Montar meu PC</a>
+          </div>
+        </div>
+        <div class="hero-image" role="img" aria-label="Computador gamer">
+          <div class="hero-badge"><strong>até 10x</strong><span>sem juros</span></div>
+        </div>
+      </div>
+    </section>
 
+    <section class="trust container" aria-label="Benefícios">
+      <article><span>⚡</span><div><strong>Entrega rápida</strong><small>Rastreie seu pedido</small></div></article>
+      <article><span>♢</span><div><strong>Pagamento seguro</strong><small>Pagamento protegido</small></div></article>
+      <article><span>◎</span><div><strong>Até 10x sem juros</strong><small>Em compras selecionadas</small></div></article>
+      <article><span>▣</span><div><strong>Suporte especializado</strong><small>Assistência técnica</small></div></article>
+    </section>
+
+    <section class="section container" id="categorias">
+      <div class="section-heading">
+        <div><span class="eyebrow dark">COMPRE POR CATEGORIA</span><h2>Equipamento para cada nível</h2></div>
+        <a href="#destaques">Ver todas as categorias →</a>
+      </div>
+      <div class="category-grid">
+        <a class="category-card" href="#destaques"><div class="category-icon">▰</div><strong>PCs Gamer</strong><span>Montados e prontos</span></a>
+        <a class="category-card" href="#destaques"><div class="category-icon">◇</div><strong>Placas de vídeo</strong><span>RTX, RX e Arc</span></a>
+        <a class="category-card" href="#destaques"><div class="category-icon">▦</div><strong>Monitores</strong><span>IPS, OLED e ultrawide</span></a>
+        <a class="category-card" href="#destaques"><div class="category-icon">⌨</div><strong>Teclados</strong><span>Mecânicos e ópticos</span></a>
+        <a class="category-card" href="#destaques"><div class="category-icon">◉</div><strong>Mouses</strong><span>Precisão e velocidade</span></a>
+        <a class="category-card" href="#destaques"><div class="category-icon">◎</div><strong>Headsets</strong><span>Som e comunicação</span></a>
+        <a class="category-card" href="#destaques"><div class="category-icon">⌁</div><strong>Rede e Wi-Fi</strong><span>Conexão sem limites</span></a>
+        <a class="category-card" href="#destaques"><div class="category-icon">▣</div><strong>Hardware</strong><span>Processadores e memória</span></a>
+      </div>
+    </section>
+
+    <section class="section products-section" id="destaques">
+      <div class="container">
+        <div class="section-heading">
+          <div><span class="eyebrow dark">SELEÇÃO ESPECIAL</span><h2>Destaques da semana</h2></div>
+          <div class="carousel-actions"><button aria-label="Anterior">←</button><button aria-label="Próximo">→</button></div>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <span class="discount">-15%</span>
+            <a class="product-image" href="tabelaPC.html"><img src="https://images.unsplash.com/photo-1593640495253-23196b27a87f?auto=format&fit=crop&w=700&q=85" alt="Computador Gamer Aizen"></a>
+            <div class="product-info">
+              <small>PC Gamer</small>
+              <h3><a href="tabelaPC.html">PC Gamer Aizen, Ryzen 5, 16GB, RTX 4060</a></h3>
+              <div class="rating">★★★★★ <span>(48)</span></div>
+              <p class="old-price">R$ 5.999,00</p>
+              <p class="price"><strong>R$ 4.999,00</strong><small>à vista no PIX</small></p>
+              <p class="installments">ou 10x de R$ 499,90 sem juros</p>
+              <button class="buy-button" type="button" data-name="PC Gamer Aizen">Adicionar ao carrinho</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <span class="discount">-12%</span>
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=700&q=85" alt="Monitor gamer"></div>
+            <div class="product-info">
+              <small>Monitores</small>
+              <h3>Monitor Gamer 27" LED, 165Hz, 1ms, IPS</h3>
+              <div class="rating">★★★★★ <span>(76)</span></div>
+              <p class="old-price">R$ 1.699,00</p>
+              <p class="price"><strong>R$ 1.499,00</strong><small>à vista no PIX</small></p>
+              <p class="installments">ou 10x de R$ 149,90 sem juros</p>
+              <button class="buy-button" type="button" data-name="Monitor Gamer">Adicionar ao carrinho</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <span class="discount">-20%</span>
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=700&q=85" alt="Teclado mecânico"></div>
+            <div class="product-info">
+              <small>Teclados</small>
+              <h3>Teclado Mecânico RGB, Switch Red, ABNT2</h3>
+              <div class="rating">★★★★★ <span>(103)</span></div>
+              <p class="old-price">R$ 499,90</p>
+              <p class="price"><strong>R$ 399,90</strong><small>à vista no PIX</small></p>
+              <p class="installments">ou 8x de R$ 49,99 sem juros</p>
+              <button class="buy-button" type="button" data-name="Teclado Mecânico">Adicionar ao carrinho</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <span class="discount">-10%</span>
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1629429407759-01cd3d7cfb5c?auto=format&fit=crop&w=700&q=85" alt="Headset gamer"></div>
+            <div class="product-info">
+              <small>Headsets</small>
+              <h3>Headset Gamer 7.1 Surround, 50mm, RGB</h3>
+              <div class="rating">★★★★★ <span>(61)</span></div>
+              <p class="old-price">R$ 399,90</p>
+              <p class="price"><strong>R$ 359,90</strong><small>à vista no PIX</small></p>
+              <p class="installments">ou 7x de R$ 51,41 sem juros</p>
+              <button class="buy-button" type="button" data-name="Headset Gamer">Adicionar ao carrinho</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <span class="discount">-18%</span>
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1547082299-de196ea013d6?auto=format&fit=crop&w=700&q=85" alt="PC Gamer Phoenix"></div>
+            <div class="product-info"><small>PC Gamer</small><h3>PC Gamer Phoenix, Ryzen 7, 32GB, RTX 4070 Super</h3><div class="rating">★★★★★ <span>(92)</span></div><p class="old-price">R$ 8.499,00</p><p class="price"><strong>R$ 6.999,00</strong><small>à vista no PIX</small></p><p class="installments">ou 10x de R$ 699,90 sem juros</p><button class="buy-button" type="button" data-name="PC Gamer Phoenix">Adicionar ao carrinho</button></div>
+          </article>
+
+          <article class="product-card">
+            <span class="discount">-22%</span>
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=700&q=85" alt="PC Gamer performance"></div>
+            <div class="product-info"><small>PC Gamer</small><h3>PC Gamer Predator, Intel i7, 32GB, RTX 4080</h3><div class="rating">★★★★★ <span>(54)</span></div><p class="old-price">R$ 12.999,00</p><p class="price"><strong>R$ 10.499,00</strong><small>à vista no PIX</small></p><p class="installments">ou 12x de R$ 874,91 sem juros</p><button class="buy-button" type="button" data-name="PC Gamer Predator">Adicionar ao carrinho</button></div>
+          </article>
+
+          <article class="product-card">
+            <span class="discount">-14%</span>
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&w=700&q=85" alt="PC Gamer compacto"></div>
+            <div class="product-info"><small>PC Gamer Mini</small><h3>PC Gamer Compact X, Ryzen 5, 16GB, RX 7600</h3><div class="rating">★★★★☆ <span>(37)</span></div><p class="old-price">R$ 4.899,00</p><p class="price"><strong>R$ 4.199,00</strong><small>à vista no PIX</small></p><p class="installments">ou 10x de R$ 419,90 sem juros</p><button class="buy-button" type="button" data-name="PC Gamer Compact X">Adicionar ao carrinho</button></div>
+          </article>
+
+          <article class="product-card">
+            <span class="discount">-10%</span>
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1585790050230-5dd28404ccb9?auto=format&fit=crop&w=700&q=85" alt="Monitor ultrawide"></div>
+            <div class="product-info"><small>Monitores</small><h3>Monitor Ultrawide 34" WQHD, 180Hz, FreeSync</h3><div class="rating">★★★★★ <span>(68)</span></div><p class="old-price">R$ 2.899,00</p><p class="price"><strong>R$ 2.599,00</strong><small>à vista no PIX</small></p>
+              <p class="installments">ou 10x de R$ 259,90 sem juros</p>
+              <button class="buy-button" type="button" data-name="Monitor Ultrawide 34">Adicionar ao carrinho</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <span class="discount">-25%</span>
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?auto=format&fit=crop&w=700&q=85" alt="Monitor OLED"></div>
+            <div class="product-info"><small>Monitores</small><h3>Monitor OLED 27" 4K, 240Hz, HDR10, 0.03ms</h3><div class="rating">★★★★★ <span>(29)</span></div><p class="old-price">R$ 5.999,00</p><p class="price"><strong>R$ 4.499,00</strong><small>à vista no PIX</small></p>
+              <p class="installments">ou 12x de R$ 374,91 sem juros</p>
+              <button class="buy-button" type="button" data-name="Monitor OLED 27">Adicionar ao carrinho</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <span class="discount">-16%</span>
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1628832086353-6b9e0d8c7e21?auto=format&fit=crop&w=700&q=85" alt="Teclado sem fio"></div>
+            <div class="product-info"><small>Teclados</small><h3>Teclado Sem Fio 75%, Hot-Swap, RGB, Bluetooth</h3><div class="rating">★★★★★ <span>(84)</span></div><p class="old-price">R$ 749,90</p><p class="price"><strong>R$ 629,90</strong><small>à vista no PIX</small></p>
+              <p class="installments">ou 8x de R$ 78,73 sem juros</p>
+              <button class="buy-button" type="button" data-name="Teclado 75 Wireless">Adicionar ao carrinho</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <span class="discount">-20%</span>
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=700&q=85" alt="Mouse gamer"></div>
+            <div class="product-info"><small>Mouses</small><h3>Mouse Gamer Wireless, Sensor 26K DPI, 80g</h3><div class="rating">★★★★★ <span>(121)</span></div><p class="old-price">R$ 499,90</p><p class="price"><strong>R$ 399,90</strong><small>à vista no PIX</small></p>
+              <p class="installments">ou 8x de R$ 49,99 sem juros</p>
+              <button class="buy-button" type="button" data-name="Mouse Gamer Wireless">Adicionar ao carrinho</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <span class="discount">-15%</span>
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?auto=format&fit=crop&w=700&q=85" alt="Placa de vídeo"></div>
+            <div class="product-info"><small>Placas de vídeo</small><h3>GeForce RTX 4070 Ti Super, 16GB GDDR6X</h3><div class="rating">★★★★★ <span>(46)</span></div><p class="old-price">R$ 6.499,00</p><p class="price"><strong>R$ 5.499,00</strong><small>à vista no PIX</small></p>
+              <p class="installments">ou 10x de R$ 549,90 sem juros</p>
+              <button class="buy-button" type="button" data-name="RTX 4070 Ti Super">Adicionar ao carrinho</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <span class="discount">-12%</span>
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=700&q=85" alt="Processador gamer"></div>
+            <div class="product-info"><small>Processadores</small><h3>Processador Ryzen 7 7800X3D, 8-Core, AM5</h3><div class="rating">★★★★★ <span>(139)</span></div><p class="old-price">R$ 2.899,00</p><p class="price"><strong>R$ 2.549,00</strong><small>à vista no PIX</small></p>
+              <p class="installments">ou 10x de R$ 254,90 sem juros</p>
+              <button class="buy-button" type="button" data-name="Ryzen 7 7800X3D">Adicionar ao carrinho</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <span class="discount">-9%</span>
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=700&q=85" alt="Placa mãe"></div>
+            <div class="product-info"><small>Placas-mãe</small><h3>Placa-Mãe AM5 B650 Wi-Fi 6E, DDR5, PCIe 4.0</h3><div class="rating">★★★★★ <span>(42)</span></div><p class="old-price">R$ 1.699,00</p><p class="price"><strong>R$ 1.549,00</strong><small>à vista no PIX</small></p>
+              <p class="installments">ou 10x de R$ 154,90 sem juros</p>
+              <button class="buy-button" type="button" data-name="Placa-Mãe B650 Wi-Fi">Adicionar ao carrinho</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <span class="discount">-18%</span>
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?auto=format&fit=crop&w=700&q=85" alt="Controle gamer"></div>
+            <div class="product-info"><small>Controles</small><h3>Controle Wireless Pro, Hall Effect e Bluetooth</h3><div class="rating">★★★★★ <span>(73)</span></div><p class="old-price">R$ 649,90</p><p class="price"><strong>R$ 529,90</strong><small>à vista no PIX</small></p>
+              <p class="installments">ou 8x de R$ 66,23 sem juros</p>
+              <button class="buy-button" type="button" data-name="Controle Wireless Pro">Adicionar ao carrinho</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <span class="discount">-30%</span>
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=700&q=85" alt="Mousepad gamer"></div>
+            <div class="product-info"><small>Acessórios</small><h3>Mousepad Gamer XL RGB, 900x400mm, Controle</h3><div class="rating">★★★★☆ <span>(88)</span></div><p class="old-price">R$ 299,90</p><p class="price"><strong>R$ 209,90</strong><small>à vista no PIX</small></p>
+              <p class="installments">ou 6x de R$ 34,98 sem juros</p>
+              <button class="buy-button" type="button" data-name="Mousepad Gamer XL RGB">Adicionar ao carrinho</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="container promo-grid">
+      <a class="promo promo-orange" href="montarPC.html"><div><small>PERSONALIZE</small><h2>Monte seu<br>setup ideal</h2><span>Começar agora →</span></div></a>
+      <a class="promo promo-blue" href="#destaques"><div><small>OFERTAS SEMANAIS</small><h2>Até 30% OFF<br>em periféricos</h2><span>Ver produtos →</span></div></a>
+    </section>
+  </main>
+
+  <footer id="atendimento">
+    <div class="container footer-grid">
+      <div><a class="brand footer-brand" href="index.html"><span class="brand-mark">P</span><span>Pixel<span>Gear</span></span></a><p>Equipamentos selecionados para elevar cada partida.</p></div>
+      <div><h3>Institucional</h3><a href="#">Sobre nós</a><a href="#">Política de privacidade</a><a href="#">Trocas e devoluções</a></div>
+      <div><h3>Atendimento</h3><a href="#">Central de ajuda</a><a href="#">Rastrear pedido</a><a href="#">Fale conosco</a></div>
+      <div><h3>Pagamento</h3><p>PIX • Cartão • Boleto</p></div>
+    </div>
+    <div class="container footer-bottom"><span>© 2026 PixelGear</span><span>Loja gamer auruda</span></div>
+  </footer>
+
+  <script>
+    const cartCount = document.getElementById('cart-count');
+    let count = 0;
+    document.querySelectorAll('.buy-button').forEach(button => {
+      button.addEventListener('click', () => {
+        count++;
+        cartCount.textContent = count;
+        const original = button.textContent;
+        button.textContent = 'Adicionado ✓';
+        button.classList.add('added');
+        setTimeout(() => { button.textContent = original; button.classList.remove('added'); }, 1500);
+      });
+    });
+  </script>
 </body>
 </html>
