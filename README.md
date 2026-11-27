@@ -19,6 +19,7 @@ S4_AT1_R4_LIMA/
 ├── index.html          # Página principal / área do usuário
 ├── entrar.html         # Página de login (adicionada na V3)
 ├── montarPC.html       # Página de personalização do PC (adicionada na V3)
+├── tabelaPC.html       # Página de testes
 ├── style.css           # Folha de estilos
 ├── cart.js             # Lógica do carrinho de compras (adicionada na V4)
 ├── theme.js            # Alternador de modo claro/escuro (adicionada na V4)
