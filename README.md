@@ -1,10 +1,10 @@
-# 💻 S4_AT1_R4_LIMA — Projeto Web (HTML, CSS e JavaScript)
+# S4_AT1_R4_LIMA — Projeto Web (HTML, CSS e JavaScript)
 
 > Repositório documentando a evolução do desenvolvimento de um site de **personalização e venda de PCs** para a atividade **S4_AT1_R4_LIMA (Hypertext Markup Language)**, dividido em quatro versões incrementais (V1 a V4).
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 * **HTML5** — Estruturação semântica, navegação multipágina e formulários interativos
 * **CSS3** — Estilização, posicionamento com classes e personalização visual
@@ -12,7 +12,7 @@
 
 ---
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```text
 S4_AT1_R4_LIMA/
@@ -28,9 +28,9 @@ S4_AT1_R4_LIMA/
 
 ---
 
-## 📌 Histórico de Versões
+## Histórico de Versões
 
-### 🧱 Versão 1 (V1) — Estrutura Base e Estilização Inicial
+### Versão 1 (V1) — Estrutura Base e Estilização Inicial
 
 #### HTML
 * Criação da estrutura inicial do site utilizando tags semânticas (`<header>` e `<footer>`), imagens (`<img src="...">`) e classes (`class`) para estilização no CSS.
@@ -45,7 +45,7 @@ S4_AT1_R4_LIMA/
 
 ---
 
-### 🎨 Versão 2 (V2) — Classes, Listas, Bordas e Links Externos
+### Versão 2 (V2) — Classes, Listas, Bordas e Links Externos
 
 * **Classes principais (`.imagem` e `.texto`):**
   * A imagem foi estruturada como um contêiner com borda invisível no CSS para que todo o texto dentro da `<div>` ficasse alinhado ao lado dela, e não abaixo.
@@ -62,7 +62,7 @@ S4_AT1_R4_LIMA/
 
 ---
 
-### 🔗 Versão 3 (V3) — Navegação Multipágina, Botões Interativos e Formulários
+### Versão 3 (V3) — Navegação Multipágina, Botões Interativos e Formulários
 
 #### Novas Páginas
 Foram adicionados dois novos arquivos HTML, expandindo o site para **3 páginas** (Login, Usuário e Personalização de PC):
@@ -115,7 +115,7 @@ Implementação de campos interativos para entrada de dados e seleção de compo
 
 ---
 
-### ✨ Versão 4 (V4) — Aprimoramento Visual (IA) e Funcionalidades JavaScript
+### Versão 4 (V4) — Aprimoramento Visual (IA) e Funcionalidades JavaScript
 
 Nesta versão, o visual e os efeitos (VFX) do site foram aprimorados com o auxílio de Inteligência Artificial, além da adição de novos itens/mercadorias e de dois arquivos JavaScript:
 
@@ -126,7 +126,7 @@ Nesta versão, o visual e os efeitos (VFX) do site foram aprimorados com o auxí
 
 ---
 
-## 🚀 Como Visualizar o Projeto
+## Como Visualizar o Projeto
 
 1. Clone ou baixe o repositório.
 2. Abra o arquivo `index.html` (ou `entrar.html`) diretamente no navegador de sua preferência.
